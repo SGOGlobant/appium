@@ -7,12 +7,14 @@
     </listeners>
     <test name="Nexus 5" preserve-order="true">
         <parameter name="port_" value="4723" />
+        <parameter name="uuid_" value="emulator-5554" />
         <packages>
             <package name="tests.*"></package>
         </packages>
     </test>
     <test name="Nexus 4" preserve-order="true">
         <parameter name="port_" value="4725" />
+        <parameter name="uuid_" value="emulator-5556" />
         <packages>
             <package name="tests.*"></package>
         </packages>

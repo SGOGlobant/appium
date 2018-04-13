@@ -16,9 +16,9 @@ public class BaseTest {
 
     public AppiumDriver<MobileElement> driver;
 
-    @Parameters({"port_"})
+    @Parameters({"port_","uuid_"})
     @BeforeMethod
-    public void beforeMethod(String port) throws IOException {
+    public void beforeMethod(String port, String uuid) throws IOException {
         File classpathRoot = new File("/home/roberto");
         File appDir = new File(classpathRoot, "Desktop");
         File app = new File(appDir.getCanonicalPath(), "twitter.apk");
@@ -27,6 +27,8 @@ public class BaseTest {
         capabilities.setCapability("deviceName","Android Emulator");
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("appPackage", "com.twitter.android");
+        //deviceUDID=emulator-5554,
+        capabilities.setCapability("deviceUDID", uuid);
         capabilities.setCapability("appActivity", ".StartActivity");
         driver = new AndroidDriver<>(new URL("http://127.0.0.1:" + port + "/wd/hub"), capabilities);
     }

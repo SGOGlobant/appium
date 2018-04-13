@@ -43,6 +43,7 @@ public class TestResultListenerAdapter extends TestListenerAdapter {
     @Override
     public void onTestSuccess(ITestResult tr) {
         System.out.println("DEBUG: " + tr.getInstanceName() + "." + tr.getMethod().getMethodName() + " -> Success");
+        takeScreenshot(tr);
         super.onTestSuccess(tr);
     }
 
